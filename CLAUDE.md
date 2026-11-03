@@ -48,4 +48,4 @@ Companion: `%LOCALAPPDATA%\better-presence\companion.js`, autostart: `better-pre
 
 ## Releases
 
-Bump `version` in `package.json`, then push a `v*` tag: `.github/workflows/release.yml` publishes `companion.js`, `claude-discord-presence.vsix`, `pet-worker.js` and `pet-worker.toml`. Keep these asset names, the installer downloads them from `releases/latest/download`. The newest release on the fork is v0.6.0; on Kiwious' repo v0.4.0.
+Bump `version` in `package.json`, then push a `v*` tag: `.github/workflows/release.yml` publishes `companion.js`, `claude-discord-presence.vsix`, `pet-worker.js` and `pet-worker.toml`. Keep these asset names, the installer downloads them from `releases/latest/download`. The newest release on the fork is v0.7.0; on Kiwious' repo v0.4.0.
