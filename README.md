@@ -49,7 +49,7 @@ The status updates at most every 15 seconds, since Discord only shows about one 
 Paste this line into PowerShell:
 
 ```powershell
-irm https://raw.githubusercontent.com/Kiwious/claude-presence/main/install.ps1 | iex
+irm https://raw.githubusercontent.com/laurensanp/claude-discord-presence/test-my-repo/install.ps1 | iex
 ```
 
 The installer asks whether it should start with Windows, whether to start it right away, whether to install the optional VS Code extension, and whether to add the optional Pet Clawd button. Feel free to [read the script](install.ps1) first.

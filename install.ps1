@@ -1,12 +1,12 @@
 # Claude Discord Presence installer. Run it with:
-#   irm https://raw.githubusercontent.com/Kiwious/claude-presence/main/install.ps1 | iex
+#   irm https://raw.githubusercontent.com/laurensanp/claude-discord-presence/test-my-repo/install.ps1 | iex
 # Running it again offers update, the Pet Clawd button and removal. Wrapped in a block so "return" can't close your window.
 # ASCII only: Windows PowerShell can misread other characters when the script comes through irm.
 & {
   $ErrorActionPreference = "Stop"
   [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
-  $base = "https://github.com/Kiwious/claude-presence/releases/latest/download"
+  $base = "https://github.com/laurensanp/claude-discord-presence/releases/latest/download"
   $dir = "$env:LOCALAPPDATA\better-presence"
   $companion = "$dir\companion.js"
   $buttonFile = "$dir\clawd-button.txt"
