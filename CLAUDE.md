@@ -22,8 +22,8 @@ Repository: `github.com/Kiwious/claude-presence` (was `better-presence`). Change
 ## Behaviour to keep
 
 - Discord rejects the whole activity if asset text is outside 2-128 characters, and the library ignores the error, so the status just disappears. Send asset text through `assetText`.
-- The companion sends activity type 5 (Competing): in a test Discord listed it above a running game (user's wish), below the user's own Go Live stream. The order isn't documented. Discord rejects type 1 (Streaming) from apps.
-- About every 2.5 min, for a minute, Clawd picks Playing, Listening or Watching instead and says why in the tooltip (`petWish`, user's wish). Only Competing is confirmed above a game, so a wish may fall below it for that minute.
+- While Claude works the companion sends type 0 (Playing): only Playing puts the app's icon next to the user's name in a voice channel (seen, not documented). While waiting it sends type 5 (Competing): in a test Discord listed it above a running game (user's wish), below the user's own Go Live stream. The order isn't documented. Discord rejects type 1 (Streaming) from apps.
+- While waiting, about every 2.5 min, for a minute, Clawd picks Playing, Listening or Watching instead and says why in the tooltip (`petWish`, user's wish). Only Competing is confirmed above a game, so a wish may fall below it for that minute.
 - The companion shows the status while a `claude.exe` that loads `claude-native-binding.node` runs (only the app's main process does, also while in the tray), checked every 2 s. Session processes don't count: the app ends idle ones while staying open, and ending its task can leave one behind. If an update renames that module, the status and pet stop working. A chat without a process shows as waiting. The extension still treats no process as no app session.
 - Clawd says "I" in most lines and sometimes its name (user's wish). Keep both when adding lines.
 - The companion checks every second and sends at most every 15 s, which is the user's choice given Discord's limit of about one update per 15 s.

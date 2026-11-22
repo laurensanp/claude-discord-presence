@@ -180,10 +180,12 @@ function buildActivity(session: AppSession, others: number) {
   const model = modelName(stats.model);
   const reset = limitReset(busy);
   const projectStart = projectClock.start(session.cwd, Date.now());
+  // While Claude works no wish shows: Playing puts the app's icon next to the name in voice
+  const shownWish = busy ? undefined : wish;
   return {
     name: "Claude Code",
     // Discord lists Competing above a running game, only its own stream stays on top
-    type: wish?.type ?? (5 as const),
+    type: busy ? (0 as const) : (shownWish?.type ?? (5 as const)),
     details: assetText(session.name ?? ""),
     // While there is a task list, the card takes turns between its step and the live action
     state: assetText(
@@ -195,7 +197,7 @@ function buildActivity(session: AppSession, others: number) {
       large_image: CLAUDE_ICON,
       large_text: assetText(model ? `${model} · Claude Code` : "Claude Code"),
       small_image: CLAWD_ICON,
-      small_text: assetText(wish?.line ?? lastLine),
+      small_text: assetText(shownWish?.line ?? lastLine),
     },
     // Discord shows one timer: the countdown to the 5h limit reset, at the start of every minute the project time
     timestamps:
