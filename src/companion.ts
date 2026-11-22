@@ -4,7 +4,7 @@ import { createServer } from "net";
 import { basename } from "path";
 import { findAppSessions, type AppSession } from "./app-session";
 import { assetText } from "./asset-text";
-import { CLIENT_ID } from "./client-id";
+import { CLAUDE_ICON, CLAWD_ICON, CLIENT_ID } from "./client-id";
 import { findOpenChat } from "./open-chat";
 import { limitReset } from "./plan-usage";
 import { ProjectClock } from "./project-clock";
@@ -192,9 +192,9 @@ function buildActivity(session: AppSession, others: number) {
         : `${action}${folder ? ` in ${folder}` : ""}`,
     ),
     assets: {
-      large_image: "claude-code",
+      large_image: CLAUDE_ICON,
       large_text: assetText(model ? `${model} · Claude Code` : "Claude Code"),
-      small_image: "clawd",
+      small_image: CLAWD_ICON,
       small_text: assetText(wish?.line ?? lastLine),
     },
     // Discord shows one timer: the countdown to the 5h limit reset, at the start of every minute the project time

@@ -16,7 +16,7 @@ Repository: `github.com/Kiwious/claude-presence` (was `better-presence`). Change
 | `src/pet-button.ts`, `worker/` | optional "Pet Clawd" button: `clawd-button.txt` names the deployed Cloudflare Worker; the button opens its `/pet` page, the companion checks `/count` every 5 s and Clawd reacts. Stores only a count |
 | `src/discord-client.ts`, `src/extension.ts` | VS Code extension; clears its status while an app session runs |
 | `src/asset-text.ts` | fits text into Discord's limit |
-| `src/client-id.ts` | Discord app ID; the fork uses laurensanp's own app (icons `claude-code`, `clawd`), Kiwious' repo has its own |
+| `src/client-id.ts` | Discord app ID (laurensanp's own app on the fork) and the card's two icons as URLs: the app icon from Discord's CDN, Clawd from the fork's `assets/clawd.png`. Portal art asset keys took too long to reach Discord |
 | `install.ps1` | one-line installer, also updates, removes and sets up the Pet Clawd button. Keep it ASCII, Windows PowerShell can misread other characters through `irm` |
 
 ## Behaviour to keep

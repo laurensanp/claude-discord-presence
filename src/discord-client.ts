@@ -2,6 +2,7 @@ import { Client } from "@nxenjs/discord-rich-presence";
 import { TabInputWebview, window, type Tab, type TextEditor } from "vscode";
 import { findAppSession } from "./app-session";
 import { assetText } from "./asset-text";
+import { CLAUDE_ICON, CLAWD_ICON } from "./client-id";
 import { fileIcon, VSCODE_ICON } from "./file-icon";
 import { messages } from "./messages";
 import { petChatter } from "./pet";
@@ -132,11 +133,11 @@ export class DiscordClient extends Client {
       details: message,
       state: this.workspace ? `Working in ${this.workspace}` : "No Workspace",
       assets: {
-        large_image: "claude-code",
+        large_image: CLAUDE_ICON,
         large_text: "Claude Code for VS Code",
         large_url:
           "https://marketplace.visualstudio.com/items?itemName=anthropic.claude-code",
-        small_image: "clawd",
+        small_image: CLAWD_ICON,
         small_text: petChatter(
           mood,
           Date.now() - (this.startedAt ?? 0),
